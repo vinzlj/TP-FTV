@@ -1,3 +1,9 @@
-app:
-    resource: "@AppBundle/Controller/"
+ftv_front:
+    resource: "@FTVFrontBundle/Controller/"
     type:     annotation
+    prefix:   /
+
+ftvapi:
+    resource: "@FTVAPIBundle/Controller/"
+    type:     annotation
+    prefix:   /api/
