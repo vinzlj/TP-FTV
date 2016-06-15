@@ -1,0 +1,37 @@
+{% extends 'FTVFrontBundle::layout.html.twig' %}
+
+{% block content %}
+  <h1>Liste des articles</h1>
+
+  <section id="articles-list">
+  </section>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var articlesList = $('#articles-list');
+
+      // Load articles list.
+      var articlesUrl = apiUrl + '/articles';
+      $.getJSON(articlesUrl, function (data) {
+        console.log(data.articles);
+
+        articlesList.empty();
+
+        if (data.articles) {
+          var content = '';
+          for(var i = 0; i < data.articles.length; i++) {
+            var article = data.articles[i];
+            content += '<div class="article">';
+            content += '<div class="article-title"><strong>' + article.title + '</strong> (par ' + article.created_by + ' le ' + article.created_at +')</div>';
+            content += '<div class="article-teaser">' + article.teaser + '</div>';
+            content += '<a href="/front/article/'+ article.slug + '">Lire la suite ></a>';
+            content += '</div>';
+          }
+          articlesList.append(content);
+        }
+      });
+
+      articlesList.text('Loading articles...');
+    });
+  </script>
+{% endblock %}

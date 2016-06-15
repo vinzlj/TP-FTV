@@ -63,7 +63,7 @@ class Article
      * @var string
      *
      * @Gedmo\Slug(fields={"title"})
-     * 
+     *
      * @ORM\Column(length=128, unique=true)
      */
     private $slug;
@@ -173,6 +173,22 @@ class Article
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
     }
 }
 

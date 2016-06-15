@@ -1,7 +1,7 @@
 ftv_front:
     resource: "@FTVFrontBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /front/
 
 ftvapi:
     resource: "@FTVAPIBundle/Controller/"
