@@ -7,3 +7,8 @@ ftvapi:
     resource: "@FTVAPIBundle/Controller/"
     type:     annotation
     prefix:   /api/
+
+articles:
+    type:        rest
+    resource:    FTV\APIBundle\Controller\ArticlesController
+    prefix:      /api/

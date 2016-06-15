@@ -10,3 +10,6 @@ Create database :
 
 Load fixtures :
 `php bin/console doctrine:fixtures:load`
+
+Available API routes :
+`php bin/console debug:router | grep api`
